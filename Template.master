@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Template.master.cs" Inherits="Template" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Template</title>
+    <link href="Styles/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="mainDiv">
+        <nav>
+            <ul>
+                <% 
+                    string currPath = HttpContext.Current.Request.Url.AbsolutePath;
+                    
+                    int currPathPos = currPath.LastIndexOf("/") + 1;
+                    
+                    string currFileName = currPath.Substring(currPathPos).ToLower();
+                %>
+
+                <% if (currFileName == "default.aspx") { %>
+                    <%= "<li><div class=\"selected\">Naslovna</a></li>" %>
+                <% } else { %>
+                    <%= "<li><a href=\"Default.aspx\">Naslovna</a></li>" %>
+                <% } %>
+
+                <% if (currFileName == "filmovi.aspx") { %>
+                    <%= "<li><div class=\"selected\">Filmovi</a></li>" %>
+                <% } else { %>
+                    <%= "<li><a href=\"Filmovi.aspx\">Filmovi</a></li>" %>
+                <% } %>
+
+                <% if ( HttpContext.Current.User.Identity.IsAuthenticated == true ) { %>
+                    <% if (currFileName == "upravljac.aspx") { %>
+                        <%= "<li><div class=\"selected\">Upravljač</a></li>" %>
+                    <% } else { %>
+                        <%= "<li><a href=\"Upravljac.aspx\">Upravljač</a></li>" %>
+                    <% } %>
+                <% } %>
+
+                <% if (currFileName == "account.aspx") { %>
+                    <%= "<li>" %> <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="Prijava" LogoutText="Odjava" CssClass="selected"/> <%= "</li>" %>
+                <% } else { %>
+                    <%= "<li>" %> <asp:LoginStatus ID="LoginStatus2" runat="server" LoginText="Prijava" LogoutText="Odjava" /> <%= "</li>" %>
+                <% } %>
+            </ul>
+        </nav>
+        <section>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </section>
+    </div>
+    </form>
+</body>
+</html>

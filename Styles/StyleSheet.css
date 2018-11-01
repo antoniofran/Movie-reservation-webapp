@@ -1,0 +1,189 @@
+﻿/* Global */
+
+body {
+    position: relative;
+    font-family: Verdana, sans-serif;
+    width: 690px;
+    margin: 10px auto;
+    font-size: 12pt;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Account */
+
+.loginForma table, .registerForma {
+    border-spacing: 10px;
+}
+
+.loginForma table td:first-child, .registerForma td:first-child {
+    border-spacing: 10px;
+    text-align: right;
+}
+
+.loginForma table tr:first-child td, .registerForma tr:first-child td {
+    background: #B83737;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.loginForma table tr:last-child td, .registerForma tr:last-child td {
+    text-align: right;
+}
+
+/* Default */
+
+#mainDiv nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+#mainDiv nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+#mainDiv nav ul li div.selected, #mainDiv nav ul li a {
+    display: block;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    background: #B83737;
+    border-radius: 3px;
+    line-height: 30px;
+    color: black;
+}
+
+#mainDiv nav ul li div.selected, #mainDiv nav ul li a:hover, #mainDiv nav ul li a.selected {
+    background: #d58a8a;
+}
+
+#mainDiv nav ul li div.selected, #mainDiv nav ul li a.selected {
+    font-weight: bold;
+}
+
+#mainDiv nav ul li a.selected {
+    pointer-events: none;
+}
+
+/* MainSection */
+
+#mainDiv section {
+    display:block;
+    border-radius: 3px;
+    padding: 5px;
+    background: #accf8a;
+    margin-top: 6px;
+    position: relative;
+}
+
+/* Movie block */
+
+.movieBlock .movieImage {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.movieBlock .movieImage img {
+    width: 100%;
+}
+
+.movieBlock .movieInfo {
+    float: left;
+    width: 70%;
+}
+
+.movieBlock .movieName {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 5px;
+    padding: 0;
+}
+
+.movieBlock .movieDesc {
+    font-size: 12pt;
+    margin: 5px;
+    padding: 0;
+}
+
+.movieBlock .movieRezerv {
+    font-size: 12pt;
+    margin: 5px;
+    padding: 0;
+}
+
+/* MovieGallery */
+
+.movieGallery {
+    width: 660px;
+    margin: 0 auto;
+}
+
+.movieGallery img {
+    float: left;
+    width: 312px;
+    height: 169px;
+    margin: 9px;
+}
+
+/* Rezervacija */
+
+#rezervacija {
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 165px;
+    height: 75px;
+    border: 2px solid black;
+    background: green;
+    padding: 5px;
+    text-align: center;
+}
+
+#pregledSjedala {
+    text-align: center;
+}
+
+#pregledSjedala input[type="checkbox"] {
+    transform: scale(2);
+    margin: 12px;
+}
+
+.spremiRezervGumb {
+    display: block;
+    width: 280px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+/* upravljaci */
+
+.listBoxSelect {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.listBoxButton {
+    text-align: center;
+}
+
+.listBoxButton input {
+    display: inline-block;
+    margin: 5px;
+}
+
+.upravljacPanel h3 {
+    margin-left: 5%;
+    font-size: 12pt;
+}
